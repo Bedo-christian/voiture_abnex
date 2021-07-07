@@ -1,6 +1,6 @@
 package com.example.demo.security;
 
-import com.example.demo.model.UserDetailsImpl;
+import com.example.demo.bean.UserDetailsImpl;
 import io.jsonwebtoken.*;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

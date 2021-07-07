@@ -1,4 +1,4 @@
-package com.example.demo.model;
+package com.example.demo.entity;
 
 import javax.persistence.*;
 import java.util.HashSet;
@@ -34,25 +34,7 @@ public class User {
     public User() {
     }
 
-    public User(int iduser) {
-        this.iduser = iduser;
-    }
-
-    public User(String username, String password) {
-        this.username = username;
-        this.password = password;
-    }
-
     public User(String firstname, String lastname, String email, String username, String password) {
-        this.firstname = firstname;
-        this.lastname = lastname;
-        this.email = email;
-        this.username = username;
-        this.password = password;
-    }
-
-    public User(int iduser, String firstname, String lastname, String email, String username, String password) {
-        this.iduser = iduser;
         this.firstname = firstname;
         this.lastname = lastname;
         this.email = email;

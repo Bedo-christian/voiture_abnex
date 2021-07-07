@@ -1,4 +1,4 @@
-package com.example.demo.model;
+package com.example.demo.entity;
 
 import javax.persistence.*;
 
@@ -6,14 +6,14 @@ import javax.persistence.*;
 @Table(name = "role")
 public class Role {
     @Id
-    @Column(name = "idrole")
+    @Column(name = "role_id")
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int idrole;
 
-    @Column(name = "rolestatus")
+    @Column(name = "role_code")
     private String rolestatus;
 
-    @Column(name = "rolename")
+    @Column(name = "role_libelle")
     private String rolename;
 
     public Role() {

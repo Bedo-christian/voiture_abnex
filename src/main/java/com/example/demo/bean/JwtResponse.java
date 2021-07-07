@@ -1,4 +1,4 @@
-package com.example.demo.model;
+package com.example.demo.bean;
 
 public class JwtResponse {
     private String token;
