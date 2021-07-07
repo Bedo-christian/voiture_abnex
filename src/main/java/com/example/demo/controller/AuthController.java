@@ -73,7 +73,7 @@ public class AuthController {
         }
 
         // Creating user's account
-        User user = new User(signUpRequest.getFirstname(),signUpRequest.getLastname(), signUpRequest.getEmail(),"", encoder.encode(signUpRequest.getPassword()));
+        User user = new User(signUpRequest.getFirstname(),signUpRequest.getLastname(), signUpRequest.getEmail(), signUpRequest.getEmail(), encoder.encode(signUpRequest.getPassword()));
 
         userService.saveUser(user);
         return ResponseEntity.ok().body("Création d'utilisateur réussie!");

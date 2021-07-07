@@ -6,8 +6,10 @@ import com.example.demo.bean.CommentsRequest;
 import com.example.demo.dao.CommentsDao;
 import com.example.demo.dao.VoitureDao;
 import com.example.demo.entity.Comments;
+import com.example.demo.entity.User;
 import com.example.demo.entity.Voiture;
 import com.example.demo.service.CommentService;
+import com.example.demo.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -23,6 +25,9 @@ public class CommentServiceImpl implements CommentService {
 
     @Autowired
     VoitureDao voitureDao;
+
+    @Autowired
+    UserService userService;
 
     @Override
     public List<CommentBean> voitureListWithComms(Voiture voiture) {
@@ -50,12 +55,14 @@ public class CommentServiceImpl implements CommentService {
 
     @Override
     public void saveComment(CommentsRequest commentsRequest) {
-            Comments comments = new Comments();
-            Voiture voiture = voitureDao.getOne(commentsRequest.getVoiture_id());
-            comments.setCreatedAt(new Date());
-            comments.setDescription(commentsRequest.getDescription());
-            comments.setVoiture(voiture);
+        User user = userService.getUserConnected();
 
-            commentsDao.save(comments);
+        Comments comments = new Comments();
+        Voiture voiture = voitureDao.getOne(commentsRequest.getVoiture_id());
+        comments.setCreatedAt(new Date());
+        comments.setDescription(commentsRequest.getDescription());
+        comments.setVoiture(voiture);
+        comments.setUser(user);
+        commentsDao.save(comments);
     }
 }

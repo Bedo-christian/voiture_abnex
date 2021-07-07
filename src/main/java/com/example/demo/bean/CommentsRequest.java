@@ -10,6 +10,7 @@ import java.util.Date;
 public class CommentsRequest {
     private String description;
     private int voiture_id;
+
     public String getDescription() {
         return description;
     }

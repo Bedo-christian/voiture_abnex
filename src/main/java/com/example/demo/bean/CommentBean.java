@@ -49,4 +49,15 @@ public class CommentBean {
     public void setVoiture(Voiture voiture) {
         this.voiture = voiture;
     }
+
+    @Override
+    public String toString() {
+        return "CommentBean{" +
+                "id=" + id +
+                ", description='" + description + '\'' +
+                ", user=" + user +
+                ", createdAt=" + createdAt +
+                ", voiture=" + voiture +
+                '}';
+    }
 }

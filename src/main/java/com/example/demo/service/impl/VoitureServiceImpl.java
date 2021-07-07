@@ -22,7 +22,7 @@ public class VoitureServiceImpl implements VoitureService {
 
     @Override
     public List<Voiture> voitureList() {
-        return null;
+        return voitureDao.findAll() ;
     }
 
 }

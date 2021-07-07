@@ -13,4 +13,7 @@ public interface UserDao extends JpaRepository<User,Long> {
 
     @Query(value="SELECT u FROM User u WHERE u.email=?1")
     List<User> findByExistUsernameOrEmail(String username);
+
+    @Query(value = "select u from User u WHERE u.email=?1")
+    User getUserByEmail(String email);
 }

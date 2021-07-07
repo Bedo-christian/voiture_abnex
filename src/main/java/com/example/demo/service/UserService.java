@@ -8,6 +8,6 @@ import java.util.List;
 public interface UserService {
     void saveUser(User user);
     boolean findUserByUsername(String username);
-
+    User getUserConnected();
     List<User>findAllUser();
 }
