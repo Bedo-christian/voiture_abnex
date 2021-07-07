@@ -5,7 +5,7 @@ créer un base de données sur mysql : "vente_voiture"
 
 Compiler le projet soit avec IntellIj ou commande mvn compile
 
-#Si tout va bien, vous pouvez utiliser le web service sur postman en respectant toutes les formats et l'endPoint Suivante
+# Si tout va bien, vous pouvez utiliser le web service sur postman en respectant toutes les formats et l'endPoint Suivante
 
 # Ajouter un utilisateur avec son mot de passe :
 méthode : post
@@ -52,7 +52,7 @@ output si success :
 }
 
 
-#Ajout voiture besoin de token
+# Ajout voiture besoin de token
 method : post,
 endpoint : http://localhost:8080/ajout-voiture
 input :
@@ -63,7 +63,7 @@ input :
 }
 ouptut success si ok,
 
-#List de toutes les voitures
+# List de toutes les voitures
 method : get
 endpoint : http://localhost:8080/voiture/list
 output si success :
