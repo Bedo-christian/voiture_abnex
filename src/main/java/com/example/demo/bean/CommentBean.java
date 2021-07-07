@@ -1,30 +1,15 @@
-package com.example.demo.entity;
+package com.example.demo.bean;
 
-import javax.persistence.*;
+import com.example.demo.entity.User;
+import com.example.demo.entity.Voiture;
 import java.util.Date;
 
-@Entity
-@Table(name = "comments")
-public class Comments {
-    @Id
-    @Column(name = "comments_id")
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+public class CommentBean {
     private int id;
-
-    @Column(name = "comments_description")
     private String description;
-
-    @ManyToOne
-    @JoinColumn(name = "voiture_id")
-    private Voiture voiture;
-
-    @ManyToOne
-    @JoinColumn(name = "user_id")
     private User user;
-
-    @Column(name = "created_at")
     private Date createdAt;
-
+    private Voiture voiture;
     public int getId() {
         return id;
     }
@@ -41,14 +26,6 @@ public class Comments {
         this.description = description;
     }
 
-    public Voiture getVoiture() {
-        return voiture;
-    }
-
-    public void setVoiture(Voiture voiture) {
-        this.voiture = voiture;
-    }
-
     public User getUser() {
         return user;
     }
@@ -63,5 +40,13 @@ public class Comments {
 
     public void setCreatedAt(Date createdAt) {
         this.createdAt = createdAt;
+    }
+
+    public Voiture getVoiture() {
+        return voiture;
+    }
+
+    public void setVoiture(Voiture voiture) {
+        this.voiture = voiture;
     }
 }

@@ -20,6 +20,7 @@ public class UserDetailsServiceImpl implements UserDetailsService {
     @Transactional
     public UserDetails loadUserByUsername(String username)
             throws UsernameNotFoundException {
+
                 User user = userDAO.findByUsernameOrEmail(username)
                     .orElseThrow(() ->
                         new UsernameNotFoundException("User Not Found with Username : " + username)

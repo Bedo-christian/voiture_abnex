@@ -1,23 +1,15 @@
-package com.example.demo.entity;
+package com.example.demo.bean;
 
-import javax.persistence.*;
+import com.example.demo.entity.Comments;
 
-@Entity
-@Table(name = "voiture")
-public class Voiture {
-    @Id
-    @Column(name = "voiture_id")
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+import java.util.List;
+
+public class CommentResponse {
     private int id;
-
-    @Column(name = "voiture_name")
     private String name;
-
-    @Column(name = "voiture_description")
     private String description;
-
-    @Column(name = "voiture_price")
     private Double price;
+    private List<CommentBean> commentBeans;
 
     public int getId() {
         return id;
@@ -49,5 +41,13 @@ public class Voiture {
 
     public void setPrice(Double price) {
         this.price = price;
+    }
+
+    public List<CommentBean> getCommentBeans() {
+        return commentBeans;
+    }
+
+    public void setCommentBeans(List<CommentBean> commentBeans) {
+        this.commentBeans = commentBeans;
     }
 }
