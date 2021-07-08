@@ -21,7 +21,7 @@ Input :
 ouptut : success si ok
 
 
-# list des utilisateur sans authentifier
+# list des utilisateurs sans authentifier
 method : get,
 endpoint : http://localhost:8080/user/list
 output:
